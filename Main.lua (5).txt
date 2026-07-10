@@ -19,7 +19,7 @@ local function CreateTopMinimizeWidget(MainWindowInstance, ScriptTitle)
     Widget.BackgroundColor3 = Color3.fromRGB(15, 3, 3)
     Widget.BackgroundTransparency = 0.2
     
-    -- Динамический текст: берёт название твоего софта
+    
     Widget.Text = "Open (" .. tostring(ScriptTitle or "Menu") .. ")"
     Widget.TextColor3 = Color3.fromRGB(255, 0, 0) -- Насыщенный красный
     Widget.Font = Enum.Font.GothamBold
@@ -35,7 +35,7 @@ local function CreateTopMinimizeWidget(MainWindowInstance, ScriptTitle)
     UIStroke.Thickness = 1
     UIStroke.Parent = Widget
 
-    -- Логика появления / исчезновения
+    
     local function ToggleWidget(show)
         if show then
             ScreenGui.Enabled = true
@@ -47,10 +47,10 @@ local function CreateTopMinimizeWidget(MainWindowInstance, ScriptTitle)
         end
     end
 
-    -- Клик по кнопке возвращает меню
+    
     Widget.MouseButton1Click:Connect(function()
         ToggleWidget(false)
-        MainWindowInstance.Enabled = true -- или .Visible = true, смотря как в либе сделано
+        MainWindowInstance.Enabled = true 
     end)
 
     return ToggleWidget
